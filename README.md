@@ -194,3 +194,35 @@ The entities in this project are interconnected to represent the complex relatio
 * A **Booking** can be associated with **one or more Payments** (e.g., partial payments, refunds, though usually one primary payment). For simplicity, we'll model it as **one Payment per Booking** for now, but acknowledge it could be One-to-Many if partial payments are implemented. (One-to-One / One-to-Many: `Bookings.id` to `Payments.booking_id`)
 * A **User** can initiate **multiple Payments**. (One-to-Many: `Users.id` to `Payments.user_id`)
 
+---
+
+## Feature Breakdown
+
+The Airbnb Clone Project is designed with several core features to replicate the essential functionalities of a real-world booking platform. Each feature contributes to a comprehensive user experience and robust business logic.
+
+* ### **User Management**
+    This feature handles all aspects related to user accounts, including registration, login, profile management, and authentication. It ensures secure access to the platform and allows users to manage their personal information, acting as either guests or property owners.
+
+* ### **Property Management**
+    This functionality enables property owners to list their properties for rent, including adding descriptions, locations, pricing, and availability. It also allows them to update, view, and remove their listings, providing full control over their inventory.
+
+* ### **Booking System**
+    The booking system allows guests to search for properties, view availability, select check-in and check-out dates, and finalize reservations. It manages the entire booking lifecycle, from initial inquiry to confirmation, ensuring properties are accurately reserved for specified dates.
+
+* ### **Review and Rating System**
+    This feature provides a mechanism for users to leave feedback and ratings for properties they have stayed in. It enhances trust and transparency on the platform by allowing future guests to make informed decisions based on past experiences and helping property owners understand areas for improvement.
+
+* ### **Payment Processing**
+    This functionality manages all financial transactions on the platform, including processing payments for bookings and handling payouts to property owners. It integrates with payment gateways to ensure secure and efficient monetary exchanges for both guests and hosts.
+
+* ### **Search and Filtering**
+    Guests can effectively discover properties based on various criteria such as location, price range, number of guests, amenities, and property type. This feature is crucial for enhancing user experience by allowing quick and relevant property discovery.
+
+* ### **API Security**
+    While not a direct user-facing feature, API security is a foundational component that ensures all data exchanges and transactions within the application are protected against unauthorized access and malicious activities. It involves implementing robust authentication, authorization, and data encryption measures to safeguard sensitive information.
+
+* ### **CI/CD Pipeline Integration**
+    This feature automates the process of building, testing, and deploying the application code. It ensures that new features and bug fixes are consistently and reliably integrated into the main codebase and deployed to production environments, minimizing manual errors and accelerating the development cycle.
+
+---
+
