@@ -129,3 +129,68 @@ This project leverages a powerful and modern technology stack to achieve its goa
 
 * **Version Control: Git & GitHub**
     * **Purpose in Project:** Git is the distributed version control system used for tracking changes in the source code, while GitHub serves as the remote repository hosting service. These tools are fundamental for collaborative development, allowing multiple team members to work on the project concurrently, manage code versions, review changes, and merge contributions efficiently.
+---
+
+## Database Design
+
+The core of the Airbnb Clone Project relies on a well-structured relational database to manage all essential data, including user information, property listings, booking details, and financial transactions. Below are the key entities, their important fields, and how they relate to each other.
+
+### Key Entities and Their Fields:
+
+* **Users**
+    * `id` (Primary Key, unique identifier for each user)
+    * `username` (Unique, for login)
+    * `email` (Unique, for communication and login)
+    * `password_hash` (Securely stored hashed password)
+    * `full_name` (User's full name)
+
+* **Properties**
+    * `id` (Primary Key, unique identifier for each property)
+    * `owner_id` (Foreign Key, links to the `Users` table - the user who owns this property)
+    * `title` (Name of the property)
+    * `description` (Detailed description of the property)
+    * `location` (Address or general location)
+    * `price_per_night` (Cost to book per night)
+    * `max_guests` (Maximum number of guests allowed)
+
+* **Bookings**
+    * `id` (Primary Key, unique identifier for each booking)
+    * `property_id` (Foreign Key, links to the `Properties` table - the property being booked)
+    * `guest_id` (Foreign Key, links to the `Users` table - the user making the booking)
+    * `check_in_date` (Date of arrival)
+    * `check_out_date` (Date of departure)
+    * `total_price` (Calculated total cost of the booking)
+    * `status` (e.g., 'pending', 'confirmed', 'cancelled', 'completed')
+
+* **Reviews**
+    * `id` (Primary Key, unique identifier for each review)
+    * `booking_id` (Foreign Key, links to the `Bookings` table - the booking this review is for)
+    * `reviewer_id` (Foreign Key, links to the `Users` table - the user who wrote the review)
+    * `property_id` (Foreign Key, links to the `Properties` table - the property being reviewed)
+    * `rating` (Score given, e.g., 1-5 stars)
+    * `comment` (Textual feedback)
+    * `review_date` (Date the review was submitted)
+
+* **Payments**
+    * `id` (Primary Key, unique identifier for each payment)
+    * `booking_id` (Foreign Key, links to the `Bookings` table - the booking this payment is for)
+    * `user_id` (Foreign Key, links to the `Users` table - the user who made the payment)
+    * `amount` (Amount of the payment)
+    * `payment_date` (Date the payment was processed)
+    * `status` (e.g., 'pending', 'completed', 'failed')
+    * `transaction_id` (Unique identifier from payment gateway)
+
+### Entity Relationships:
+
+The entities in this project are interconnected to represent the complex relationships in a booking system:
+
+* A **User** can **own multiple Properties**. (One-to-Many: `Users.id` to `Properties.owner_id`)
+* A **User** can make **multiple Bookings** as a guest. (One-to-Many: `Users.id` to `Bookings.guest_id`)
+* A **Property** can have **multiple Bookings**. (One-to-Many: `Properties.id` to `Bookings.property_id`)
+* A **Booking** is made by one **User** (guest) for one **Property**. (Many-to-One: `Bookings.guest_id` to `Users.id` and `Bookings.property_id` to `Properties.id`)
+* A **Booking** can have **one Review** (after completion). (One-to-One: `Bookings.id` to `Reviews.booking_id`)
+* A **User** can write **multiple Reviews**. (One-to-Many: `Users.id` to `Reviews.reviewer_id`)
+* A **Property** can receive **multiple Reviews**. (One-to-Many: `Properties.id` to `Reviews.property_id`)
+* A **Booking** can be associated with **one or more Payments** (e.g., partial payments, refunds, though usually one primary payment). For simplicity, we'll model it as **one Payment per Booking** for now, but acknowledge it could be One-to-Many if partial payments are implemented. (One-to-One / One-to-Many: `Bookings.id` to `Payments.booking_id`)
+* A **User** can initiate **multiple Payments**. (One-to-Many: `Users.id` to `Payments.user_id`)
+
