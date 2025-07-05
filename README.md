@@ -80,3 +80,30 @@ This project is licensed under the [MIT License](LICENSE) - see the `LICENSE` fi
 ## Contact
 
 For any inquiries or feedback, please reach out to [Your Name/Email Address/GitHub Profile Link].
+
+
+---
+
+## Team Roles and Responsibilities
+
+In the development of the Airbnb Clone Project, various specialized roles are essential for successful execution and collaboration. Each role contributes uniquely to the project's lifecycle, from backend logic to database management and overall project coordination.
+
+* **Project Lead / Technical Lead:**
+    * **Responsibility:** Oversees the entire technical direction and execution of the project. This role involves making key architectural decisions, guiding the development team, ensuring best practices are followed, and acting as a bridge between technical implementation and project objectives. They are crucial for maintaining technical consistency and quality.
+
+* **Backend Developer:**
+    * **Responsibility:** Focuses on server-side logic, database interaction, API development, and ensuring the application's core functionality. They are responsible for building robust, scalable, and secure APIs, managing data flow, and implementing business logic. In this project, they will primarily work with Django and GraphQL.
+
+* **Database Administrator (DBA) / Database Designer:**
+    * **Responsibility:** Designs, implements, and maintains the project's database systems (MySQL in this case). This includes creating database schemas, ensuring data integrity, optimizing queries for performance, managing backups, and ensuring the security of stored information. They work closely with backend developers to define data models.
+
+* **DevOps Engineer:**
+    * **Responsibility:** Manages the development and deployment pipeline. This includes setting up and maintaining CI/CD (Continuous Integration/Continuous Deployment) pipelines using tools like GitHub Actions, managing infrastructure (e.g., Docker containers), ensuring smooth deployments, monitoring application performance, and implementing automation to streamline development processes.
+
+* **Security Specialist (Implied through "advanced security measures"):**
+    * **Responsibility:** Focuses on identifying and mitigating security vulnerabilities throughout the application's lifecycle. This includes conducting security reviews, implementing authentication and authorization mechanisms, ensuring data encryption, adhering to security best practices for API development, and advising the team on secure coding standards.
+
+* **Quality Assurance (QA) Engineer / Tester (Implied by overall project quality):**
+    * **Responsibility:** Ensures the quality and reliability of the software. This involves designing and executing test plans, identifying bugs, verifying fixes, and ensuring that the application meets all functional and non-functional requirements. They work across all layers of the application.
+
+---
