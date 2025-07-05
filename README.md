@@ -107,3 +107,25 @@ In the development of the Airbnb Clone Project, various specialized roles are es
     * **Responsibility:** Ensures the quality and reliability of the software. This involves designing and executing test plans, identifying bugs, verifying fixes, and ensuring that the application meets all functional and non-functional requirements. They work across all layers of the application.
 
 ---
+
+## Technology Stack
+
+This project leverages a powerful and modern technology stack to achieve its goals, with each component playing a crucial role in building a scalable and robust booking platform:
+
+* **Backend Framework: Django (Python)**
+    * **Purpose in Project:** Django serves as the robust, high-level Python web framework for building the backend of the Airbnb clone. It provides a solid foundation for rapid development with its "batteries-included" philosophy, enabling the creation of secure and scalable web applications. Specifically, I'll utilize Django for developing the core business logic, managing user authentication and authorization, handling data models, and serving as the backbone for the API endpoints.
+
+* **Database: MySQL**
+    * **Purpose in Project:** MySQL is chosen as the relational database management system to store all persistent data for the Airbnb clone. This includes user profiles, property listings, booking information, reviews, and other essential application data. Its reliability, scalability, and widespread support make it ideal for managing complex relationships between various data entities efficiently.
+
+* **API Layer: GraphQL**
+    * **Purpose in Project:** GraphQL will be implemented as the API query language and runtime. Its primary purpose is to provide clients with a powerful and flexible way to request precisely the data they need, reducing over-fetching and under-fetching issues common with traditional REST APIs. This enables more efficient data exchange between the frontend and backend, allowing for complex queries and mutations tailored to specific UI requirements.
+
+* **Containerization: Docker**
+    * **Purpose in Project:** Docker will be used to containerize the application, including the Django backend, MySQL database, and any other services. This ensures consistent development, testing, and production environments by packaging the application and its dependencies into isolated containers. Docker simplifies deployment, enhances portability, and facilitates easier local development setup for all team members.
+
+* **CI/CD: GitHub Actions**
+    * **Purpose in Project:** GitHub Actions will be employed to automate the Continuous Integration and Continuous Deployment (CI/CD) pipeline. This will streamline the development workflow by automatically building, testing, and deploying the application whenever changes are pushed to the repository. It helps in catching bugs early, ensuring code quality, and facilitating rapid and reliable releases.
+
+* **Version Control: Git & GitHub**
+    * **Purpose in Project:** Git is the distributed version control system used for tracking changes in the source code, while GitHub serves as the remote repository hosting service. These tools are fundamental for collaborative development, allowing multiple team members to work on the project concurrently, manage code versions, review changes, and merge contributions efficiently.
